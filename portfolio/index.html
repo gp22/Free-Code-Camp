@@ -49,6 +49,20 @@
   max-width: 400px;
 }
 
+.floating-label-form-group {
+  border-top: 1px solid #eee;
+  /* border-bottom: 1px solid #eee; */
+  position: relative;
+}
+
+.input-control {
+  border: none;
+  outline: none;
+  border-radius: 0;
+  box-shadow: none !important;
+  font-size: 20px;
+}
+
 h1 {
   font-family: 'Roboto', sans-serif;
   font-size: 62px;
@@ -64,7 +78,7 @@ h3 {
   font-size: 40px;
 }
 
-p {
+body {
   font-family: 'Roboto Slab', serif;
   font-size: 20px;
 }
@@ -181,7 +195,6 @@ p {
   <div class="row">
     <div class="col-xs-12 col-md-6">
       <p class="pgp-key">-----BEGIN PGP PUBLIC KEY BLOCK-----</p>
-
 <p class="pgp-key">mQINBFfNDioBEADSP/LK6jp3mXH7lI2xyCHjdVhKoAp6YfNggO1k/eWxPDozRG9L
 LNCBtvJr5feziZc7HTU4PaInTJCRKvjMzg8gKfOWI0Zu+6xZVU9lKKLXhu0oAHJm
 MtDapY7R0dIhMou/i1956GnOEvAUSi9Zm5tyWmpamMwW92v4k0CoJT9Z3UMGzj6e
@@ -232,15 +245,43 @@ h+oAq7qPvMONDOjNE19XJBSUVTZR3JLUW0NJm26sNHfomakEUbRg
 <p class="pgp-key">-----END PGP PUBLIC KEY BLOCK-----</p>
     </div>
     <div class="col-xs-12 col-md-6">
+      <form>
+        <div class="row">
+          <div class="form-group col-xs-12 floating-label-form-group">
+            <label></label>
+            <input type="name" class="form-control input-control" id="name" placeholder="Name">
+            <p></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col-xs-12 floating-label-form-group">
+            <label></label>
+            <input type="email" class="form-control input-control" id="email" placeholder="Email">
+            <p></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col-xs-12 floating-label-form-group">
+            <label></label>
+            <textarea class="form-control input-control" rows="5" id="message" placeholder="Message"></textarea>
+            <p></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col-xs-12">
+            <button class="btn btn-success btn-lg">Send</button>
+          </div>
+        </div>
+      </form>
     </div>
   </div>
 </div>
 </section> <!-- contact -->
 
 <footer>
-<div class="container">
+  <div class="container">
 
-</div>
+  </div>
 </footer> <!-- footer -->
 
 </body>
