@@ -63,6 +63,10 @@
   font-size: 20px;
 }
 
+.footer-col {
+  margin-bottom: 50px;
+}
+
 h1 {
   font-family: 'Roboto', sans-serif;
   font-size: 62px;
@@ -83,9 +87,23 @@ body {
   font-size: 20px;
 }
 
+footer {
+  color: #fff;
+}
+
 .pgp-key {
   font-family: 'Source Code Pro', monospace;
   font-size: 8px;
+}
+
+.footer-above {
+  padding-top: 50px;
+  background-color: #2C3E50;
+}
+
+.footer-below {
+  padding: 25px 0;
+  background-color: #233140;
 }
 
 #portfolio {
@@ -102,7 +120,9 @@ body {
 }
 
 #title {
-  padding-bottom: 20px;
+  padding-bottom: 10px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #333;
 }
 </style>
 
@@ -143,7 +163,7 @@ body {
 <section id="portfolio"> <!-- portfolio -->
   <div class="container">
     <div class="row">
-      <div class="col-xs-12 text-center" id="title">
+      <div class="col-xs-10 col-xs-offset-1 text-center" id="title">
         <h2>Portfolio</h2>
       </div>
     </div>
@@ -173,7 +193,7 @@ body {
 <section id="about"> <!-- about -->
   <div class="container">
     <div class="row">
-      <div class="col-xs-12 text-center" id="title">
+      <div class="col-xs-10 col-xs-offset-1 text-center" id="title">
         <h2>About</h2>
       </div>
     </div>
@@ -188,87 +208,73 @@ body {
 <section id="contact">
 <div class="container">
   <div class="row">
-    <div class="col-xs-12 text-center" id="title">
+    <div class="col-xs-10 col-xs-offset-1 text-center" id="title">
       <h2>Contact</h2>
     </div>
   </div>
   <div class="row">
-    <div class="col-xs-12 col-md-6">
+    <div class="col-xs-10 col-xs-offset-1 col-md-6 col-md-offset-0">
       <p class="pgp-key">-----BEGIN PGP PUBLIC KEY BLOCK-----</p>
-<p class="pgp-key">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
-=wn5O</p>
-<p class="pgp-key">-----END PGP PUBLIC KEY BLOCK-----</p>
+        <p class="pgp-key">mQINBFfNDioBEADSP/LK6jp3mXH7lI2xyCHjdVhKoAp6YfNggO1k/eWxPDozRG9L
+        LNCBtvJr5feziZc7HTU4PaInTJCRKvjMzg8gKfOWI0Zu+6xZVU9lKKLXhu0oAHJm
+        MtDapY7R0dIhMou/i1956GnOEvAUSi9Zm5tyWmpamMwW92v4k0CoJT9Z3UMGzj6e
+        OurXVHGSY7wFvveKyGQE5yO9CI4tYsS9POQL4n79PcDIOIogubgU0NwlRcWP5IWS
+        rhsNEVMXI0EwNL3pMyZ01sp5k2zHqiW7h8clJRwh6iYtR0ce3scalBMRqP2M5UDQ
+        s8ZX3f5kGiyjlF7xUHmBGW0ZXEtp5X0d4eHqICz4NZpO85HAP2ZbWdwhRxWkxYKY
+        bKA6saQo3BdMhw4b1ugBiOv4YsmCRJiGGZvLYivXWP5IDrValbBJto6pT58tjeHK
+        3ETt+51bwn6wDUjVxWmi+L5SGncaS3+FLlvbcRxkuRYhY3wqUnMHWpQKRNZwbB24
+        8srkvT9brQXYq0x90xDGv2rZfFiC0rwuPffTyO/uNfV42twy+xe6iT8sQOBIHZ6e
+        HRTOfxfVo7joDkzmpsVi3CG9uujPS9Km1KQd29k5TkkJhRuWShhc/+wtSNWj7d2K
+        ni5JE4tAPBVRjYiRBt+Qqb6MYlBgzDGtdMSks83ik53q6iTVZmC9i6VsBQARAQAB
+        tBktZ3AyMiA8Z3AyMkB0dXRhbm90YS5jb20+iQI3BBMBCgAhBQJXzQ4qAhsDBQsJ
+        CAcDBRUKCQgLBRYCAwEAAh4BAheAAAoJENmYaCktBQfDqTEP/1R4C71OxNbfoZ7c
+        daSoB6UIehcJ0lRrOKpx3Tp5z65s1nbEXEi0gjGiHz8yOxXT0I1S3mA2x+dxWGJc
+        auK3KLvdJrONYvP7eRPOqRvqsHdoPRH0tCV4vtFzSfQ0MAKCabxmJwWw1CAk6V1T
+        VAXp0z6mi7jhSzM7UD4b7OBIiMxe+qdELAp+5KEm9/T+XDru2ccJiAI0nqtApPlE
+        3ec5GeO2T2tXl7ZyiQOrhVqH1atIQHWtR/IJf0uhNVFXOwIH87UdiMkK0alLv29h
+        vwF4HODRMfMDxEM6OF6NgT3yhtk54yFDC1ZoD5Mv6kpcPbdCwqP22s/aS2MiX5Ms
+        5CA5ASpO8yHhjs5uXxkgtA83XlAoxLow5h4VxgKGt4t5z3NnJkQlyw1eKn2LdaC8
+        uT4pduZSSzatyVMWF+UZzHzgw6aHREIt7jiiHEae8Z8zIqT/pk9J/EgKHMGM2GGU
+        fOE3PZSn6JEVPO8Vgi49tiRKOXGCQ5YWl9gu78oIHdQmvXlLLfM8pwcZ024S6x2S
+        KFT0CrcQzQfwm6sJm2+CHnGmOgV7Bsy5Z+XdBkV4PBiBm51jO65nCOz4wFwL3dHw
+        MldIa9gpTJzrJabaRF9tqwRR2q5eSkiyJj3DsMOXjGh+1262oW5Plr9O183LLjZ8
+        1ZmkD79mFy3aJLX9zpz9eMybZQ2auQINBFfNDioBEACeiRMYcTFIUpZNsW7psUAb
+        PcEQZLrOdpmiLOESa2aI/LDPPhPtIkpZnQmsQ3l8TkRqUZKtXpE5Rrfnfqmz12uW
+        3QFSv/zB4nqdAKzm9SwGpJGtaiJJ+se35XgQiSnQcwpvy34gC66U4GTWyeND/uV7
+        </p>
+      <p class="pgp-key">-----END PGP PUBLIC KEY BLOCK-----</p>
     </div>
     <div class="col-xs-12 col-md-6">
+      <div class="row">
+        <div class="form-group col-xs-10 col-xs-offset-1 col-sm-12 col-sm-offset-0">
+          <p>Get in touch. I'm a big supporter of encryption so use my PGP key to encrypt the message.
+          </p>
+        </div>
+      </div>
       <form>
         <div class="row">
-          <div class="form-group col-xs-12 floating-label-form-group">
+          <div class="form-group col-xs-10 col-xs-offset-1 col-sm-12 col-sm-offset-0 floating-label-form-group">
             <label></label>
             <input type="name" class="form-control input-control" id="name" placeholder="Name">
             <p></p>
           </div>
         </div>
         <div class="row">
-          <div class="form-group col-xs-12 floating-label-form-group">
+          <div class="form-group col-xs-10 col-xs-offset-1 col-sm-12 col-sm-offset-0 floating-label-form-group">
             <label></label>
             <input type="email" class="form-control input-control" id="email" placeholder="Email">
             <p></p>
           </div>
         </div>
         <div class="row">
-          <div class="form-group col-xs-12 floating-label-form-group">
+          <div class="form-group col-xs-10 col-xs-offset-1 col-sm-12 col-sm-offset-0 floating-label-form-group">
             <label></label>
             <textarea class="form-control input-control" rows="5" id="message" placeholder="Message"></textarea>
             <p></p>
           </div>
         </div>
         <div class="row">
-          <div class="form-group col-xs-12">
+          <div class="form-group col-xs-10 col-xs-offset-1 col-sm-12 col-sm-offset-0">
             <button class="btn btn-success btn-lg">Send</button>
           </div>
         </div>
@@ -278,9 +284,33 @@ h+oAq7qPvMONDOjNE19XJBSUVTZR3JLUW0NJm26sNHfomakEUbRg
 </div>
 </section> <!-- contact -->
 
-<footer>
-  <div class="container">
-
+<footer class="text-center">
+  <div class="footer-above">
+    <div class="container">
+      <div class="row">
+        <div class="footer-col col-lg-4">
+          <p></p>
+        </div>
+        <div class="footer-col col-lg-4">
+          <h3>Around The Web</h3>
+          <ul class="list-inline">
+            
+          </ul>
+        </div>
+        <div class="footer-col col-lg-4">
+          <p></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-below">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <p>Designed and coded by GP22</p>
+        </div>
+      </div>
+    </div>
   </div>
 </footer> <!-- footer -->
 
