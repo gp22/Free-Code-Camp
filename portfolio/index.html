@@ -66,7 +66,7 @@
   outline: none;
   border-radius: 0;
   box-shadow: none !important;
-  font-size: 20px;
+  font-size: 14px;
 }
 
 .footer-col {
@@ -75,31 +75,30 @@
 
 h1 {
   font-family: 'Roboto', sans-serif;
-  font-size: 56px;
+  font-size: 40px;
 }
 
 h2 {
   font-family: 'Roboto', sans-serif;
-  font-size: 48px;
+  font-size: 32px;
 }
 
 h3 {
   font-family: 'Roboto', sans-serif;
-  font-size: 40px;
+  font-size: 24px;
 }
 
 body {
   font-family: 'Roboto Slab', serif;
-  font-size: 20px;
+  font-size: 14px;
 }
 
 footer {
   color: #fff;
 }
 
-.pgp-key {
+.encrypted {
   font-family: 'Source Code Pro', monospace;
-  font-size: 8px;
 }
 
 .btn-outline {
@@ -139,8 +138,25 @@ footer {
 #title {
   padding-bottom: 10px;
   margin-bottom: 50px;
-  border-bottom: 2.5px solid #333;
+  border-bottom: 2px solid #333;
 }
+
+@media (min-width: 576px) {
+  h1 {font-size: 48px;}
+  h2 {font-size: 40px;}
+  h3 {font-size: 32px;}
+  body {font-size: 18px;}
+  .input-control {font-size: 18px;}
+}
+
+@media (min-width: 992px) {
+  h1 {font-size: 56px;}
+  h2 {font-size: 48px;}
+  h3 {font-size: 40px;}
+  body {font-size: 20px;}
+  .input-control {font-size: 20px;}
+}
+
 </style>
 
 <body>
@@ -171,7 +187,7 @@ footer {
       <img class="img-responsive img-circle center-block" style="max-height: 300px"src="profile.jpg" alt="">
     </div>
     <div class="col-xs-12 col-md-8 col-md-pull-4 col-lg-8 heading">
-      <h1>Curious, creative, slightly delusional. Always learning new stuff, and breaking  stuff in the process.</h1>
+      <h1>Curious, creative, slightly delusional. Always learning, and breaking  stuff in the process.</h1>
     </div>
   </div>
 </div> <!-- /header -->
@@ -179,7 +195,7 @@ footer {
 <section id="portfolio"> <!-- portfolio -->
   <div class="container">
     <div class="row">
-      <div class="col-xs-10 col-xs-offset-1 text-center" id="title">
+      <div class="col-xs-10 col-xs-offset-1 col-sm-12 col-sm-offset-0 text-center" id="title">
         <h2>Portfolio</h2>
       </div>
     </div>
@@ -215,7 +231,8 @@ footer {
     </div>
     <div class="row">
       <div class="col-xs-10 col-xs-offset-1">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id lorem tincidunt, pulvinar lacus at, venenatis leo. Phasellus sem justo, hendrerit id vestibulum quis, sollicitudin eu mi. Praesent eu nulla justo. Cras cursus purus ac scelerisque tempus. Nam at risus ut orci sollicitudin laoreet at in tortor. Praesent nec eros at augue vestibulum pulvinar vitae et diam. Curabitur iaculis ultrices purus a euismod. Quisque pharetra libero eget ex cursus vestibulum. Vivamus vitae mattis metus, nec faucibus est. Phasellus iaculis lacus vitae nunc aliquet, quis tempor massa consectetur. Mauris ac ornare urna, sed ornare lacus.</p>
+        <p>I’m passionate about science, technology, and it’s implications on society. I believe in privacy, freedom, and pushing the boundaries of what’s considered normal and acceptable.</p>
+        <p>I believe we all deserve to freely express ourselves on the Internet, and that technology should strengthen these basic rights. I’ve recently taken up computer science, and coding as a way of helping people, and contributing to these wild times we find ourselves living in.</p>
       </div>
     </div>
   </div>
@@ -272,10 +289,7 @@ footer {
   <div class="footer-above">
     <div class="container">
       <div class="row">
-        <div class="footer-col col-lg-4">
-          <p></p>
-        </div>
-        <div class="footer-col col-lg-4">
+        <div class="footer-col col-lg-6">
           <h3>Around The Web</h3>
           <ul class="list-inline">
             <li>
@@ -290,8 +304,8 @@ footer {
             </li>
           </ul>
         </div>
-        <div class="footer-col col-lg-4">
-          <p></p>
+        <div class="encrypted footer-col col-lg-6" style="padding-top: 25px">
+          <p>Eb ukq’na ejpanaopaz ej ajynulpekj wjz lnerwyu, zksjhkwz iu lcl gau wjz oajz ia wj ajynulpaz iaoowca wp cl22 wp pqpwjkpw zkp yki.</p>
         </div>
       </div>
     </div>
