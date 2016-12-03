@@ -5,11 +5,29 @@
     <meta charset="UTF-8">
     <title>Random Quote Generator</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300|Roboto:400,700" rel="stylesheet">
 </head>
 
 <body>
-    <div>
-        <button onclick="getQuote()">Get Quote</button>
+    <div class="container">
+        <div class="github">
+          <!-- <i class="fa fa-github" aria-hidden="true"></i><p class="github">@<a href="#">GP22</a></p> -->
+          <a href="https://github.com/gp22"><i class="fa fa-github" aria-hidden="true"></i>gp22</a>
+        </div>
+        <div class="quoteBox">
+            <div>
+                <h1>"</h1>
+                <h1 id="quoteText"></h1>
+                <h1>"</h1>
+            </div>
+            <div>
+                <h2>~<span id="quoteAuthor"></span></h2>
+            </div>
+            <div>
+                <button class="button" onclick="getQuote()">Get New Quote</button>
+            </div>
+        </div>
     </div>
     <script src="default.js"></script>
 </body>
