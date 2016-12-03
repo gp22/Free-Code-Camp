@@ -16,4 +16,11 @@ function getQuote() {
     }
 }
 
+function sendTweet() {
+    var tweetLink = 'http://twitter.com/home?status=';
+    var quoteText = document.getElementById('quoteText').innerHTML;
+    var textToTweet = tweetLink + encodeURIComponent(quoteText);
+    window.open(textToTweet);
+}
+
 getQuote();

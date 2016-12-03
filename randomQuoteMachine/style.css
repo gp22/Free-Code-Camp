@@ -58,12 +58,20 @@ a, body, h1, h2, p {
     border: none;
     color: #fff;
     background-color: #64b5f6;
-    box-shadow: 0.05em 0.1em 0.5em #bdbdbd;
+    margin-bottom: 1.5em;
 }
 
 .button:hover {
     background-color: #42a5f5;
-    box-shadow: 0.05em 0.1em 0.5em #757575;
+}
+
+.twitter i {
+  color: #64b5f6;
+  font-size: 1.6em;
+}
+
+.twitter i:hover {
+  color: #42a5f5;
 }
 
 @media (min-width: 600px) {
@@ -84,6 +92,9 @@ a, body, h1, h2, p {
     .button {
         font-size: 1em;
     }
+    .twitter i {
+      font-size: 1.8em;
+    }
 }
 
 @media (min-width: 900px) {
@@ -98,5 +109,8 @@ a, body, h1, h2, p {
     }
     .button {
         font-size: 1.1em;
+    }
+    .twitter i {
+      font-size: 2em;
     }
 }
