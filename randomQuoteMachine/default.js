@@ -23,4 +23,11 @@ function sendTweet() {
     window.open(textToTweet);
 }
 
+// event listeners and handlers for button clicks
+var newQuoteButton = document.getElementById('newQuoteButton');
+var tweetButton = document.getElementById('tweetButton');
+
+newQuoteButton.addEventListener('click', getQuote, false);
+tweetButton.addEventListener('click', sendTweet, false);
+
 getQuote();
