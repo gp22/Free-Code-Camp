@@ -1,0 +1,75 @@
+body {
+    background-image: url("/images/51-60.jpg");
+    background-size: cover;
+}
+
+a, body, h1, h2, p {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    font-weight: normal;
+}
+
+.container {
+  /*border: 1px solid red;*/
+    display: flex;
+    height: 100vh;
+}
+
+.weatherStats {
+    /*border: 1px solid green;*/
+    width: 25%;
+    align-self: center;
+    margin: auto;
+    padding: 1em;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-wrap: wrap;
+}
+
+h1 {
+  /*color: #81d4fa;*/
+  font-size: 10em;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+p {
+  font-size: 1.5em;
+}
+.description, .temp_max, .temp_min, .temp, .wind, .humidity {
+    font-family: 'Lato', sans-serif;
+    color: #fff;
+}
+
+.description {
+  width: 100%;
+}
+
+.temp_max {
+  width: 50%;
+}
+
+.temp_min {
+  width: 50%;
+}
+
+.temp {
+  width: 100%;
+}
+
+.wind {
+  width: 50%;
+}
+
+.humidity {
+  width: 50%;
+}
+
+@media (min-width: 600px) {}
+
+@media (min-width: 900px) {}
+
+@media (min-width: 1200px) {}

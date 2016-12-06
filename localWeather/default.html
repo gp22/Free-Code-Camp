@@ -3,26 +3,29 @@
 
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>Get The Local Weather</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet">
 </head>
 
 <body>
-    <h1>Get The Local Weather</h1>
-    <div>
+    <!-- <div>
         <button class="button" id="geoLocateButton">Get My Location</button>
+    </div> -->
+    <div class="container">
+        <div class="weatherStats">
+            <div id="icon">.</div>
+            <div class="description"><h2 id="description">Desc.</h2></div>
+            <div class="temp_max"><h2 id="temp_max">0 f</h2></div>
+            <div class="temp_min"><h2 id="temp_min">0 f</h2></div>
+            <div class="temp"><h1 id="temp">0 f</h1></div>
+            <div class="wind"><p>W:<span id="wind">0</span></p></div>
+            <div class="humidity"><p>H:<span id="humidity" >0</span>%</p></div>
+            <div>
+                <button id="changeUnits"><p>Change Units</p></button>
+            </div>
+        </div>
     </div>
-    <div>
-        <button id="changeUnits">Change Units</button>
-    </div>
-    <div id="icon">.</div>
-    <div id="description">Desc.</div>
-    <div id="temp_max">0</div>
-    <div id="temp_min">0</div>
-    <div id="temp">0</div>
-    <div>W:<span id="wind"></span></div>
-    <div>H:<span id="humidity"></span>%</div>
-
     <script src="default.js"></script>
 </body>
 
