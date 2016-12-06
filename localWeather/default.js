@@ -8,7 +8,7 @@ function geoLocate() {
     navigator.geolocation.getCurrentPosition(function(position) {
         lat = position.coords.latitude;
         lon = position.coords.longitude;
-        console.log("lat = ", lat, "lon = ", lon);
+        // console.log("lat = ", lat, "lon = ", lon);
         getForecast(lat, lon);
     });
 }
@@ -27,14 +27,14 @@ function getForecast(lat, lon) {
         if (xhr.readyState == 4 && xhr.status == 200) {
             var response = JSON.parse(xhr.responseText);
 
-            document.getElementById('temp_max').innerHTML = Math.round(kelvinToFahrenheit(response.main.temp_max)) + ' F';
-            document.getElementById('temp_min').innerHTML = Math.round(kelvinToFahrenheit(response.main.temp_min)) + ' F';
-            document.getElementById('temp').innerHTML = Math.round(kelvinToFahrenheit(response.main.temp)) + ' F';
+            // add weather data to page
+            document.getElementById('temp_max').innerHTML = Math.round(kelvinToFahrenheit(response.main.temp_max)) + ' f';
+            document.getElementById('temp_min').innerHTML = Math.round(kelvinToFahrenheit(response.main.temp_min)) + ' f';
+            document.getElementById('temp').innerHTML = Math.round(kelvinToFahrenheit(response.main.temp)) + ' f';
             document.getElementById('description').innerHTML = response.weather[0].main;
-            document.getElementById('wind').innerHTML = Math.round(metersPsToMilesPh(response.wind.speed)) + ' MPH';
+            document.getElementById('wind').innerHTML = Math.round(metersPsToMilesPh(response.wind.speed)) + ' mph';
             document.getElementById('humidity').innerHTML = response.main.humidity;
-
-            console.log(response);
+            // console.log(response);
         }
     }
 }
@@ -75,60 +75,64 @@ function kilometersToMiles(kilometers) {
 
 function changeUnits() {
     // check if units are imperial, if they are, change to metric
-    if (document.getElementById('temp').innerHTML.slice(-1) === 'F') {
+    if (document.getElementById('temp').innerHTML.slice(-1) === 'f') {
         // change current temperature
         var tempFahrenheit = parseInt(document.getElementById('temp').innerHTML.split(' ')[0], 10);
         var tempCelsius = Math.round(fahrenheitToCelsius(tempFahrenheit));
         tempCelsius.toString(10);
-        document.getElementById('temp').innerHTML = tempCelsius + ' C';
+        document.getElementById('temp').innerHTML = tempCelsius + ' c';
 
         // change high temp
         tempFahrenheit = parseInt(document.getElementById('temp_max').innerHTML.split(' ')[0], 10);
         tempCelsius = Math.round(fahrenheitToCelsius(tempFahrenheit));
         tempCelsius.toString(10);
-        document.getElementById('temp_max').innerHTML = tempCelsius + ' C';
+        document.getElementById('temp_max').innerHTML = tempCelsius + ' c';
 
         // change low temp
         tempFahrenheit = parseInt(document.getElementById('temp_min').innerHTML.split(' ')[0], 10);
         tempCelsius = Math.round(fahrenheitToCelsius(tempFahrenheit));
         tempCelsius.toString(10);
-        document.getElementById('temp_min').innerHTML = tempCelsius + ' C';
+        document.getElementById('temp_min').innerHTML = tempCelsius + ' c';
 
         // change wind speed
         var windSpeedMiles = parseInt(document.getElementById('wind').innerHTML.split(' ')[0], 10);
         var windSpeedKilos = Math.round(milesToKilometers(windSpeedMiles));
         windSpeedKilos.toString(10);
-        document.getElementById('wind').innerHTML = windSpeedKilos + ' KPH';
+        document.getElementById('wind').innerHTML = windSpeedKilos + ' kph';
 
     } else { // else, change to imperial
         // change current temperature
         var tempCelsius = parseInt(document.getElementById('temp').innerHTML.split(' ')[0], 10);
         var tempFahrenheit = Math.round(celsiusToFahrenheit(tempCelsius));
         tempCelsius.toString(10);
-        document.getElementById('temp').innerHTML = tempFahrenheit + ' F';
+        document.getElementById('temp').innerHTML = tempFahrenheit + ' f';
 
         // change high temp
         var tempCelsius = parseInt(document.getElementById('temp_max').innerHTML.split(' ')[0], 10);
         var tempFahrenheit = Math.round(celsiusToFahrenheit(tempCelsius));
         tempCelsius.toString(10);
-        document.getElementById('temp_max').innerHTML = tempFahrenheit + ' F';
+        document.getElementById('temp_max').innerHTML = tempFahrenheit + ' f';
 
         // change low temp
         var tempCelsius = parseInt(document.getElementById('temp_min').innerHTML.split(' ')[0], 10);
         var tempFahrenheit = Math.round(celsiusToFahrenheit(tempCelsius));
         tempCelsius.toString(10);
-        document.getElementById('temp_min').innerHTML = tempFahrenheit + ' F';
+        document.getElementById('temp_min').innerHTML = tempFahrenheit + ' f';
 
         // change wind speed
         var windSpeedKilos = parseInt(document.getElementById('wind').innerHTML.split(' ')[0], 10);
         var windSpeedMiles = Math.round(kilometersToMiles(windSpeedKilos));
         windSpeedMiles.toString(10);
-        document.getElementById('wind').innerHTML = windSpeedMiles + ' MPH';
+        document.getElementById('wind').innerHTML = windSpeedMiles + ' mph';
     }
 }
 
-var geoLocateButton = document.getElementById('geoLocateButton');
+// add event listeners
+// var geoLocateButton = document.getElementById('geoLocateButton');
 var changeUnitsButton = document.getElementById('changeUnits');
 
-geoLocateButton.addEventListener('click', geoLocate, false);
+// geoLocateButton.addEventListener('click', geoLocate, false);
 changeUnitsButton.addEventListener('click', changeUnits, false);
+
+// start this whole crazy mess running!
+geoLocate();
