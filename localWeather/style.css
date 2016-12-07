@@ -36,10 +36,15 @@ h1 {
 
 h2 {
     font-size: 1.5em;
+    display: inline;
 }
 
 p {
     font-size: 1.5em;
+}
+
+.temp_icon {
+  height: 1em;
 }
 
 .description, .temp_max, .temp_min, .temp, .wind, .humidity {
@@ -47,8 +52,13 @@ p {
     color: #fff;
 }
 
+.weather_icon {
+    width: 15%;
+}
+
 .description {
-    width: 100%;
+    padding-top: 0.5em;
+    width: 85%;
 }
 
 .temp_max {
@@ -60,6 +70,7 @@ p {
 }
 
 .temp {
+    margin: -1.5em 0;
     width: 100%;
 }
 

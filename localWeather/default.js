@@ -1,3 +1,4 @@
+// store all JSON parsed weather data here
 var weatherData = {};
 
 function geoLocate() {
@@ -38,23 +39,96 @@ function getForecast(lat, lon) {
             document.getElementById('humidity').innerHTML = weatherData.main.humidity;
             // console.log(response);
 
+            setWeatherIcon(weatherData.weather[0].icon);
             setBackgroundImage(weatherData.main.temp);
         }
     }
 }
 
-function setBackgroundImage(data) {
-  // set the background image based on current temp
-  var temp = Math.round(kelvinToFahrenheit(data));
+function setWeatherIcon(data) {
+    switch (data) {
+        // daytime icons 1-4
+        case '01d':
+            document.getElementById('weather_icon').src = "http://openweathermap.org/img/w/01d.png";
+            break;
+        case '02d':
+            document.getElementById('weather_icon').src = "http://openweathermap.org/img/w/02d.png";
+            break;
+        case '03d':
+            document.getElementById('weather_icon').src = "http://openweathermap.org/img/w/03d.png";
+            break;
+        case '04d':
+            document.getElementById('weather_icon').src = "http://openweathermap.org/img/w/04d.png"
+            break;
+            // nighttime icons 1-4
+        case '01n':
+            document.getElementById('weather_icon').src = "http://openweathermap.org/img/w/01n.png";
+            break;
+        case '02n':
+            document.getElementById('weather_icon').src = "http://openweathermap.org/img/w/02n.png";
+            break;
+        case '03n':
+            document.getElementById('weather_icon').src = "http://openweathermap.org/img/w/03n.png";
+            break;
+        case '04n':
+            document.getElementById('weather_icon').src = "http://openweathermap.org/img/w/04n.png"
+            break;
+            // daytime icons 9-50
+        case '09d':
+            document.getElementById('weather_icon').src = "http://openweathermap.org/img/w/09d.png";
+            break;
+        case '10d':
+            document.getElementById('weather_icon').src = "http://openweathermap.org/img/w/10d.png";
+            break;
+        case '11d':
+            document.getElementById('weather_icon').src = "http://openweathermap.org/img/w/11d.png";
+            break;
+        case '13d':
+            document.getElementById('weather_icon').src = "http://openweathermap.org/img/w/13d.png";
+            break;
+        case '50d':
+            document.getElementById('weather_icon').src = "http://openweathermap.org/img/w/50d.png";
+            break;
+            // nighttime icons 9-50
+        case '09n':
+            document.getElementById('weather_icon').src = "http://openweathermap.org/img/w/09n.png";
+            break;
+        case '10n':
+            document.getElementById('weather_icon').src = "http://openweathermap.org/img/w/10n.png";
+            break;
+        case '11n':
+            document.getElementById('weather_icon').src = "http://openweathermap.org/img/w/11n.png";
+            break;
+        case '13n':
+            document.getElementById('weather_icon').src = "http://openweathermap.org/img/w/13n.png";
+            break;
+        case '50n':
+            document.getElementById('weather_icon').src = "http://openweathermap.org/img/w/50n.png";
+            break;
+    }
+}
 
-  if (temp < 31) { document.body.style.backgroundImage = "url('/images/below31.jpg')"; }
-  else if (temp >= 31 && temp < 41) { document.body.style.backgroundImage = "url('/images/31-40.jpg')"; }
-  else if (temp >= 41 && temp < 51) { document.body.style.backgroundImage = "url('/images/41-50.jpg')"; }
-  else if (temp >= 51 && temp < 61) { document.body.style.backgroundImage = "url('/images/51-60.jpg')"; }  
-  else if (temp >= 61 && temp < 71) { document.body.style.backgroundImage = "url('/images/61-70.jpg')"; }
-  else if (temp >= 71 && temp < 81) { document.body.style.backgroundImage = "url('/images/71-80.jpg')"; }
-  else if (temp >= 81 && temp < 91) { document.body.style.backgroundImage = "url('/images/81-90.jpg')"; }
-  else if (temp >= 91) { document.body.style.backgroundImage = "url('/images/above90.jpg')"; }
+function setBackgroundImage(data) {
+    // set the background image based on current temp
+    var temp = Math.round(kelvinToFahrenheit(data));
+
+    if (temp < 31) {
+        document.body.style.backgroundImage = "url('/images/below31.jpg')";
+    } else if (temp >= 31 && temp < 41) {
+        document.body.style.backgroundImage = "url('/images/31-40.jpg')";
+    } else if (temp >= 41 && temp < 51) {
+        document.body.style.backgroundImage = "url('/images/41-50.jpg')";
+    } else if (temp >= 51 && temp < 61) {
+        document.body.style.backgroundImage = "url('/images/51-60.jpg')";
+    } else if (temp >= 61 && temp < 71) {
+        document.body.style.backgroundImage = "url('/images/61-70.jpg')";
+    } else if (temp >= 71 && temp < 81) {
+        document.body.style.backgroundImage = "url('/images/71-80.jpg')";
+    } else if (temp >= 81 && temp < 91) {
+        document.body.style.backgroundImage = "url('/images/81-90.jpg')";
+    } else if (temp >= 91) {
+        document.body.style.backgroundImage = "url('/images/above90.jpg')";
+    }
 }
 
 function kelvinToFahrenheit(tempKelvin) {
