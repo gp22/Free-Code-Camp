@@ -1,3 +1,5 @@
+var weatherData = {};
+
 function geoLocate() {
     var lat = 0;
     var lon = 0;
@@ -25,18 +27,34 @@ function getForecast(lat, lon) {
 
     function processRequest() {
         if (xhr.readyState == 4 && xhr.status == 200) {
-            var response = JSON.parse(xhr.responseText);
+            weatherData = JSON.parse(xhr.responseText);
 
             // add weather data to page
-            document.getElementById('temp_max').innerHTML = Math.round(kelvinToFahrenheit(response.main.temp_max)) + ' f';
-            document.getElementById('temp_min').innerHTML = Math.round(kelvinToFahrenheit(response.main.temp_min)) + ' f';
-            document.getElementById('temp').innerHTML = Math.round(kelvinToFahrenheit(response.main.temp)) + ' f';
-            document.getElementById('description').innerHTML = response.weather[0].main;
-            document.getElementById('wind').innerHTML = Math.round(metersPsToMilesPh(response.wind.speed)) + ' mph';
-            document.getElementById('humidity').innerHTML = response.main.humidity;
+            document.getElementById('temp_max').innerHTML = Math.round(kelvinToFahrenheit(weatherData.main.temp_max)) + ' f';
+            document.getElementById('temp_min').innerHTML = Math.round(kelvinToFahrenheit(weatherData.main.temp_min)) + ' f';
+            document.getElementById('temp').innerHTML = Math.round(kelvinToFahrenheit(weatherData.main.temp)) + ' f';
+            document.getElementById('description').innerHTML = weatherData.weather[0].main;
+            document.getElementById('wind').innerHTML = Math.round(metersPsToMilesPh(weatherData.wind.speed)) + ' mph';
+            document.getElementById('humidity').innerHTML = weatherData.main.humidity;
             // console.log(response);
+
+            setBackgroundImage(weatherData.main.temp);
         }
     }
+}
+
+function setBackgroundImage(data) {
+  // set the background image based on current temp
+  var temp = Math.round(kelvinToFahrenheit(data));
+
+  if (temp < 31) { document.body.style.backgroundImage = "url('/images/below31.jpg')"; }
+  else if (temp >= 31 && temp < 41) { document.body.style.backgroundImage = "url('/images/31-40.jpg')"; }
+  else if (temp >= 41 && temp < 51) { document.body.style.backgroundImage = "url('/images/41-50.jpg')"; }
+  else if (temp >= 51 && temp < 61) { document.body.style.backgroundImage = "url('/images/51-60.jpg')"; }  
+  else if (temp >= 61 && temp < 71) { document.body.style.backgroundImage = "url('/images/61-70.jpg')"; }
+  else if (temp >= 71 && temp < 81) { document.body.style.backgroundImage = "url('/images/71-80.jpg')"; }
+  else if (temp >= 81 && temp < 91) { document.body.style.backgroundImage = "url('/images/81-90.jpg')"; }
+  else if (temp >= 91) { document.body.style.backgroundImage = "url('/images/above90.jpg')"; }
 }
 
 function kelvinToFahrenheit(tempKelvin) {

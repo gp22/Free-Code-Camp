@@ -1,6 +1,8 @@
 body {
-    background-image: url("/images/51-60.jpg");
+    /*background-image: url("/images/51-60.jpg");*/
+    background-color: #64b5f6;
     background-size: cover;
+    background-position: center;
 }
 
 a, body, h1, h2, p {
@@ -11,7 +13,7 @@ a, body, h1, h2, p {
 }
 
 .container {
-  /*border: 1px solid red;*/
+    /*border: 1px solid red;*/
     display: flex;
     height: 100vh;
 }
@@ -21,51 +23,68 @@ a, body, h1, h2, p {
     width: 25%;
     align-self: center;
     margin: auto;
-    padding: 1em;
-    background: rgba(0, 0, 0, 0.4);
+    padding: 3em 1em;
+    background: rgba(0, 0, 0, 0.5);
     display: flex;
     flex-wrap: wrap;
 }
 
 h1 {
-  /*color: #81d4fa;*/
-  font-size: 10em;
+    /*color: #81d4fa;*/
+    font-size: 10em;
 }
 
 h2 {
-  font-size: 1.5em;
+    font-size: 1.5em;
 }
 
 p {
-  font-size: 1.5em;
+    font-size: 1.5em;
 }
+
 .description, .temp_max, .temp_min, .temp, .wind, .humidity {
     font-family: 'Lato', sans-serif;
     color: #fff;
 }
 
 .description {
-  width: 100%;
+    width: 100%;
 }
 
 .temp_max {
-  width: 50%;
+    width: 50%;
 }
 
 .temp_min {
-  width: 50%;
+    width: 50%;
 }
 
 .temp {
-  width: 100%;
+    width: 100%;
 }
 
 .wind {
-  width: 50%;
+    width: 50%;
 }
 
 .humidity {
-  width: 50%;
+    width: 50%;
+}
+
+.github {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.8em;
+    font-weight: bold;
+    margin: 0.5em;
+}
+
+.github a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.github i {
+    margin-right: 0.25em;
 }
 
 @media (min-width: 600px) {}
