@@ -5,20 +5,29 @@ function geoLocate() {
     var lat = 0;
     var lon = 0;
 
-    // if (navigator.geolocation) {
-    //   document.getElementById('position').innerHTML = "Yes";
+    function getCoords() {
+        var xhr = new XMLHttpRequest();
+        var api = 'http://ipinfo.io/json';
 
-    navigator.geolocation.getCurrentPosition(function(position) {
-        lat = position.coords.latitude;
-        lon = position.coords.longitude;
-        // console.log("lat = ", lat, "lon = ", lon);
-        getForecast(lat, lon);
-    });
+        xhr.open('GET', api, true);
+        xhr.send();
+        xhr.onreadystatechange = processRequest;
+
+        function processRequest() {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                locationData = JSON.parse(xhr.responseText);
+                lat = locationData.loc.split(',')[0];
+                lon = locationData.loc.split(',')[1];
+                getForecast(lat, lon);
+            }
+        }
+    }
+    getCoords();
 }
 
 function getForecast(lat, lon) {
     var xhr = new XMLHttpRequest();
-    var api = 'https://api.openweathermap.org/data/2.5/weather?';
+    var api = 'http://api.openweathermap.org/data/2.5/weather?';
     var key = '0abcae66974746b7b7bf53438db71f24';
     var apiUrl = api + 'lat=' + lat + '&lon=' + lon + '&APPID=' + key;
 
@@ -49,61 +58,61 @@ function setWeatherIcon(data) {
     switch (data) {
         // daytime icons 1-4
         case '01d':
-            document.getElementById('weather_icon').src = "https://openweathermap.org/img/w/01d.png";
+            document.getElementById('weather_icon').src = "http://openweathermap.org/img/w/01d.png";
             break;
         case '02d':
-            document.getElementById('weather_icon').src = "https://openweathermap.org/img/w/02d.png";
+            document.getElementById('weather_icon').src = "http://openweathermap.org/img/w/02d.png";
             break;
         case '03d':
-            document.getElementById('weather_icon').src = "https://openweathermap.org/img/w/03d.png";
+            document.getElementById('weather_icon').src = "http://openweathermap.org/img/w/03d.png";
             break;
         case '04d':
-            document.getElementById('weather_icon').src = "https://openweathermap.org/img/w/04d.png"
+            document.getElementById('weather_icon').src = "http://openweathermap.org/img/w/04d.png"
             break;
             // nighttime icons 1-4
         case '01n':
-            document.getElementById('weather_icon').src = "https://openweathermap.org/img/w/01n.png";
+            document.getElementById('weather_icon').src = "http://openweathermap.org/img/w/01n.png";
             break;
         case '02n':
-            document.getElementById('weather_icon').src = "https://openweathermap.org/img/w/02n.png";
+            document.getElementById('weather_icon').src = "http://openweathermap.org/img/w/02n.png";
             break;
         case '03n':
-            document.getElementById('weather_icon').src = "https://openweathermap.org/img/w/03n.png";
+            document.getElementById('weather_icon').src = "http://openweathermap.org/img/w/03n.png";
             break;
         case '04n':
-            document.getElementById('weather_icon').src = "https://openweathermap.org/img/w/04n.png"
+            document.getElementById('weather_icon').src = "http://openweathermap.org/img/w/04n.png"
             break;
             // daytime icons 9-50
         case '09d':
-            document.getElementById('weather_icon').src = "https://openweathermap.org/img/w/09d.png";
+            document.getElementById('weather_icon').src = "http://openweathermap.org/img/w/09d.png";
             break;
         case '10d':
-            document.getElementById('weather_icon').src = "https://openweathermap.org/img/w/10d.png";
+            document.getElementById('weather_icon').src = "http://openweathermap.org/img/w/10d.png";
             break;
         case '11d':
-            document.getElementById('weather_icon').src = "https://openweathermap.org/img/w/11d.png";
+            document.getElementById('weather_icon').src = "http://openweathermap.org/img/w/11d.png";
             break;
         case '13d':
-            document.getElementById('weather_icon').src = "https://openweathermap.org/img/w/13d.png";
+            document.getElementById('weather_icon').src = "http://openweathermap.org/img/w/13d.png";
             break;
         case '50d':
-            document.getElementById('weather_icon').src = "https://openweathermap.org/img/w/50d.png";
+            document.getElementById('weather_icon').src = "http://openweathermap.org/img/w/50d.png";
             break;
             // nighttime icons 9-50
         case '09n':
-            document.getElementById('weather_icon').src = "https://openweathermap.org/img/w/09n.png";
+            document.getElementById('weather_icon').src = "http://openweathermap.org/img/w/09n.png";
             break;
         case '10n':
-            document.getElementById('weather_icon').src = "https://openweathermap.org/img/w/10n.png";
+            document.getElementById('weather_icon').src = "http://openweathermap.org/img/w/10n.png";
             break;
         case '11n':
-            document.getElementById('weather_icon').src = "https://openweathermap.org/img/w/11n.png";
+            document.getElementById('weather_icon').src = "http://openweathermap.org/img/w/11n.png";
             break;
         case '13n':
-            document.getElementById('weather_icon').src = "https://openweathermap.org/img/w/13n.png";
+            document.getElementById('weather_icon').src = "http://openweathermap.org/img/w/13n.png";
             break;
         case '50n':
-            document.getElementById('weather_icon').src = "https://openweathermap.org/img/w/50n.png";
+            document.getElementById('weather_icon').src = "http://openweathermap.org/img/w/50n.png";
             break;
     }
 }
